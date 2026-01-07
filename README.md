@@ -4,7 +4,7 @@ This repository contains R scripts accompanying the article:
 
 **Piscopo, G., Bandaru, S.T., Giacalone, M., & Longobardi, M. (2025).  
 Permutation-Based Analysis of Clinical Variables in Necrotizing Fasciitis Using NPC and Bootstrap.  
-Mathematics, 13(x), https://doi.org/10.3390/xxxxx**
+Mathematics, 13(x), https://www.mdpi.com/2227-7390/13/17/2869
 
 ---
 
