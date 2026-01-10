@@ -1,89 +1,160 @@
-# NPC and Bootstrap Analysis for Necrotizing Fasciitis
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0A192F&height=200&section=header&text=NF%20Risk%20Stratification&fontSize=44&fontColor=00E5FF&animation=fadeIn" />
+</p>
 
-This repository contains R scripts accompanying the article:
+<p align="center">
+  🔬 Clinical Risk Stratification in Necrotizing Fasciitis &nbsp;|&nbsp; 🧠 NPC & Bootstrap Statistics &nbsp;|&nbsp; 📊 Reproducible Research
+</p>
 
-**Piscopo, G., Bandaru, S.T., Giacalone, M., & Longobardi, M. (2025).  
-Permutation-Based Analysis of Clinical Variables in Necrotizing Fasciitis Using NPC and Bootstrap.  
-Mathematics, 13(x), https://www.mdpi.com/2227-7390/13/17/2869
+<p align="center">
+  <img src="https://img.shields.io/badge/Language-R-blue?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Statistics-NPC%20%26%20Bootstrap-brightgreen?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Clinical-Decision%20Support-orange?style=flat-square"/>
+  <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square"/>
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square"/>
+</p>
 
----
+# 📈 NF Risk Stratification using NPC & Bootstrap
 
-## Overview
-Necrotizing fasciitis (NF) is a rare but severe soft tissue infection.  
-This project applies **Nonparametric Combination (NPC) tests** and **bootstrap resampling** to evaluate clinical biomarkers:
+This repository provides a **reproducible statistical framework** for evaluating clinical risk in **Necrotizing Fasciitis (NF)** using **Nonparametric Combination (NPC) tests** and **bootstrap resampling**.
 
-- **HBA1C** (glycemic control)
-- **ALBUMINA** (nutritional status)
-- **MORTO** (mortality outcome)
-- **AMPUTAZIONE** (major amputation outcome)
+The pipeline is designed to work with **small, heterogeneous clinical datasets**, where classical parametric models fail, and is fully aligned with the peer-reviewed methodology described in:
 
-The scripts allow replication of:
-- Partial and global hypothesis testing  
-- Bootstrap confidence interval estimation  
-- Patient severity ranking via NPC  
-- Visualizations (boxplots, violin plots, heatmaps)
-
----
-
-## Repository Contents
-- `code/npc_analysis.R` → Partial tests, Fisher/Tippett/Lipták combinations, Bonferroni correction  
-- `code/bootstrap_analysis.R` → Bootstrap resampling for HBA1C and ALBUMINA  
-- `code/ranking_analysis.R` → Global severity ranking computation  
-- `code/descriptive_stats.R` → Basic descriptive statistics  
-- `code/utils.R` → Helper functions for reproducibility  
-
-- `data/` → Place your dataset here (`nf_clinical_data.csv`). **(Not provided due to privacy restrictions)**  
+> **Permutation-Based Analysis of Clinical Variables in Necrotizing Fasciitis Using NPC and Bootstrap**  
+> Piscopo, G., Bandaru, S. T., Giacalone, M., & Longobardi, M. (2025).  
+> *Mathematics*, **13**(17), 2869.  
+> https://doi.org/10.3390/math13172869
 
 ---
 
-## Requirements
-- R (≥ 4.3.1)
-- R packages:
-  ```r
-  install.packages(c("boot", "dplyr", "tidyverse", "pheatmap"))
-  ```
+## 🧬 Clinical Variables Analyzed
+
+This project focuses on clinically meaningful predictors and outcomes:
+
+| Variable | Clinical Meaning |
+|--------|-----------------|
+| **HBA1C** | Glycemic control (diabetes severity) |
+| **ALBUMINA** | Nutritional status |
+| **MORTO** | Mortality outcome |
+| **AMPUTAZIONE** | Major amputation outcome |
+
+These variables are combined through NPC testing to identify **global patient risk profiles**.
 
 ---
 
-## Usage
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/nf-risk-stratification.git
-   cd nf-risk-stratification
-   ```
+## 🔬 What the System Computes
 
-2. Add the clinical dataset into the `data/` folder:
-   ```
-   data/nf_clinical_data.csv
-   ```
+The scripts allow full replication of:
 
-3. Run the scripts in order:
-   ```r
-   source("code/descriptive_stats.R")
-   source("code/npc_analysis.R")
-   source("code/bootstrap_analysis.R")
-   source("code/ranking_analysis.R")
-   ```
+- Partial and global **hypothesis testing**
+- **Fisher, Tippett, and Lipták** combination methods
+- **Bonferroni correction** for multiple testing
+- **Bootstrap confidence intervals** for clinical variables
+- **Patient severity ranking** using NPC
+- **Clinical visualizations**:
+  - Boxplots  
+  - Violin plots  
+  - Heatmaps  
 
-4. Outputs include:
-   - Partial and global p-values  
-   - Bonferroni-adjusted results  
-   - Bootstrap confidence intervals  
-   - Ranked patient severity scores  
-   - Visualizations (boxplots, violin plots, heatmaps)  
+This enables **data-driven stratification of NF patients** into risk profiles.
 
 ---
 
-## Citation
-If you use this repository, please cite the article:
+## 📁 Repository Structure
 
-> Piscopo, G., Bandaru, S.T., Giacalone, M., & Longobardi, M. (2025).  
-> *Permutation-Based Analysis of Clinical Variables in Necrotizing Fasciitis Using NPC and Bootstrap*.  
-> Mathematics, 13(x), https://www.mdpi.com/2227-7390/13/17/2869
+```
+code/
+ ├── npc_analysis.R         → Partial tests, Fisher/Tippett/Lipták combinations, Bonferroni correction
+ ├── bootstrap_analysis.R  → Bootstrap resampling for HBA1C and ALBUMINA
+ ├── ranking_analysis.R    → Global patient severity ranking via NPC
+ ├── descriptive_stats.R  → Descriptive statistics and plots
+ └── utils.R               → Helper functions for reproducibility
+
+data/
+ └── nf_clinical_data.csv  → Place your dataset here (not provided due to privacy)
+```
+
 ---
 
-## Note
-- The **real dataset is not included** due to ethical and privacy restrictions.  
-- An empty `data/` folder is provided; please insert the anonymized dataset to reproduce results.  
-- All analysis code was validated in **R version 4.3.1**.  
+## ⚠️ Data Privacy
 
+The real clinical dataset is **not included** due to ethical and privacy restrictions.  
+You must place your own anonymized dataset here:
+
+```
+data/nf_clinical_data.csv
+```
+
+---
+
+## ▶ How to Run
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/saitejabandaru-in/nf-risk-stratification.git
+cd nf-risk-stratification
+```
+
+### 2. Add the dataset
+Place your CSV file into:
+```
+data/nf_clinical_data.csv
+```
+
+### 3. Run the full analytical pipeline
+```r
+source("code/descriptive_stats.R")
+source("code/npc_analysis.R")
+source("code/bootstrap_analysis.R")
+source("code/ranking_analysis.R")
+```
+
+---
+
+## 📤 Outputs
+
+The pipeline produces:
+
+- Partial and global **p-values**
+- **Bonferroni-adjusted** hypothesis tests
+- **Bootstrap confidence intervals**
+- **Patient risk rankings**
+- Visualizations:
+  - Boxplots  
+  - Violin plots  
+  - Heatmaps  
+
+These outputs support **clinical decision-making and risk stratification**.
+
+---
+
+## 🧠 What This Project Shows
+
+This repository demonstrates:
+
+✔ Advanced statistical modeling  
+✔ Nonparametric hypothesis testing  
+✔ Bootstrap inference  
+✔ Clinical data analytics  
+✔ Reproducible research pipelines  
+✔ Research-grade software engineering  
+
+It is suitable for:
+- Clinical data scientists  
+- Biostatistics teams  
+- Medical AI research  
+- Graduate-level analytics portfolios  
+
+---
+
+## 👨‍💻 Author
+
+**Sai Teja Bandaru**  
+Data Scientist & Clinical Analytics Researcher  
+Università degli Studi della Campania Luigi Vanvitelli  
+
+---
+
+## ⭐ If You Find This Useful
+
+Please ⭐ the repository — it helps others discover reproducible clinical analytics!
