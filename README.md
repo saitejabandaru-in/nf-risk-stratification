@@ -1,6 +1,7 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=rect&color=0A192F&height=200&section=header&text=NF%20Risk%20Stratification&fontSize=44&fontColor=00E5FF&animation=fadeIn" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:4F7CAC,100:1C2B36&height=180&section=header&text=NF%20Risk%20Stratification&fontSize=38&fontColor=E6EEF3&animation=fadeIn&fontAlignY=45" />
 </p>
+
 
 <p align="center">
   🔬 Clinical Risk Stratification in Necrotizing Fasciitis &nbsp;|&nbsp; 🧠 NPC & Bootstrap Statistics &nbsp;|&nbsp; 📊 Reproducible Research
