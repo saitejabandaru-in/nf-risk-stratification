@@ -148,7 +148,7 @@ It is suitable for:
 
 ---
 
-## 👨‍💻 Author
+## 🎓 Author
 
 **Sai Teja Bandaru**  
 Data Scientist & Clinical Analytics Researcher  
