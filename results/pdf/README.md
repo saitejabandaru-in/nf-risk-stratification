@@ -25,7 +25,7 @@ The PDF includes:
 - Fisher, Tippett, and Lipták p-value combination methods
 - Bootstrap confidence interval estimation
 - NPC-based global severity ranking
-- Visualizations, tables, and full R code appendix
+- Visualizations, tables, and a full R code appendix
 
 > **Refer to the PDF for all detailed results and interpretations.**
 
