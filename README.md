@@ -3,19 +3,20 @@
 </p>
 
 <p align="center">
-  Clinical risk stratification in necrotizing fasciitis | NPC statistics | Bootstrap inference | R package
+  Clinical risk stratification in necrotizing fasciitis | NPC statistics | Bootstrap inference | Python and R packages
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Language-R-blue?style=flat-square"/>
+  <a href="https://pypi.org/project/nf-risk-stratification/"><img src="https://img.shields.io/pypi/v/nf-risk-stratification?style=flat-square&label=PyPI"/></a>
+  <a href="https://github.com/saitejabandaru-in/nf-risk-stratification/releases"><img src="https://img.shields.io/github/v/release/saitejabandaru-in/nf-risk-stratification?style=flat-square&label=GitHub%20Release"/></a>
+  <img src="https://img.shields.io/badge/Language-Python%20%7C%20R-blue?style=flat-square"/>
   <img src="https://img.shields.io/badge/Package-nfRiskStratification-brightgreen?style=flat-square"/>
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square"/>
-  <img src="https://img.shields.io/badge/Status-Release%200.1.0-brightgreen?style=flat-square"/>
 </p>
 
 # NF Risk Stratification
 
-`nfRiskStratification` is an installable R package for reproducible clinical
+`nf-risk-stratification` provides Python and R tooling for reproducible clinical
 risk stratification in necrotizing fasciitis. It supports descriptive clinical
 summaries, partial tests, Fisher/Tippett/Liptak nonparametric combination
 methods, bootstrap confidence intervals, and patient severity ranking.
@@ -29,7 +30,7 @@ The package is aligned with the methodology described in:
 
 ## Installation
 
-Install the Python package from PyPI:
+Install the Python package from [PyPI](https://pypi.org/project/nf-risk-stratification/):
 
 ```bash
 python -m pip install nf-risk-stratification
@@ -48,6 +49,17 @@ You can also build locally from a clone:
 R CMD build .
 R CMD INSTALL nfRiskStratification_0.1.0.tar.gz
 ```
+
+## Project Links
+
+| Resource | Link |
+| --- | --- |
+| PyPI project | https://pypi.org/project/nf-risk-stratification/ |
+| PyPI release files | https://pypi.org/project/nf-risk-stratification/#files |
+| GitHub repository | https://github.com/saitejabandaru-in/nf-risk-stratification |
+| GitHub releases | https://github.com/saitejabandaru-in/nf-risk-stratification/releases |
+| Latest GitHub release | https://github.com/saitejabandaru-in/nf-risk-stratification/releases/latest |
+| Issues | https://github.com/saitejabandaru-in/nf-risk-stratification/issues |
 
 ## Required Data
 
@@ -145,6 +157,12 @@ source("ranking_analysis.R")
 
 ## Release Workflow
 
+GitHub releases are available at:
+
+```text
+https://github.com/saitejabandaru-in/nf-risk-stratification/releases
+```
+
 Tagged releases build and publish a source package automatically:
 
 ```bash
@@ -155,12 +173,24 @@ git push origin v0.1.0
 GitHub Actions then runs package checks, builds
 `nfRiskStratification_0.1.0.tar.gz`, and attaches it to the GitHub release.
 
+PyPI distributions are built from:
+
+```bash
+python -m build
+python -m twine check dist/*
+```
+
+Never commit PyPI API tokens or credentials. Use environment variables or a
+trusted local keyring only at upload time.
+
 ## Repository Layout
 
 ```text
 R/                         Package source
+python/                    Python package source for PyPI
 man/                       Function documentation
 tests/testthat/            Unit tests
+tests_python/              Python smoke tests
 inst/extdata/              Example anonymized dataset
 data/                      Private local dataset location, not packaged
 .github/workflows/         R package checks and release automation

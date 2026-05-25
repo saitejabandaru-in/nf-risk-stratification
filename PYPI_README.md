@@ -19,6 +19,17 @@ It mirrors the repository's R package workflow with:
 python -m pip install nf-risk-stratification
 ```
 
+## Links
+
+| Resource | Link |
+| --- | --- |
+| PyPI project | https://pypi.org/project/nf-risk-stratification/ |
+| PyPI release files | https://pypi.org/project/nf-risk-stratification/#files |
+| GitHub repository | https://github.com/saitejabandaru-in/nf-risk-stratification |
+| GitHub releases | https://github.com/saitejabandaru-in/nf-risk-stratification/releases |
+| Latest GitHub release | https://github.com/saitejabandaru-in/nf-risk-stratification/releases/latest |
+| Issues | https://github.com/saitejabandaru-in/nf-risk-stratification/issues |
+
 ## Quick Start
 
 ```python
@@ -59,6 +70,12 @@ Optional columns:
 | `PATIENT_ID` | Patient identifier |
 
 The real clinical dataset is not included for privacy and ethics reasons.
+
+## Security
+
+PyPI API tokens and credentials are not required at runtime and must never be
+committed to this repository. Use a local environment variable or trusted
+keyring only when uploading release artifacts.
 
 ## Citation
 
