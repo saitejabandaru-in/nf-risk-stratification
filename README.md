@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-  <a href="https://pypi.org/project/nf-risk-stratification/"><img src="https://img.shields.io/badge/PyPI-ready%20for%20publish-blue?style=flat-square"/></a>
-  <a href="https://github.com/saitejabandaru-in/nf-risk-stratification/releases"><img src="https://img.shields.io/badge/GitHub%20Release-ready%20for%20v0.1.0-blue?style=flat-square"/></a>
+  <img src="https://img.shields.io/badge/PyPI-pending-lightgrey?style=flat-square"/>
+  <img src="https://img.shields.io/badge/GitHub%20Release-pending-lightgrey?style=flat-square"/>
   <img src="https://img.shields.io/badge/Language-Python%20%7C%20R-blue?style=flat-square"/>
   <img src="https://img.shields.io/badge/Package-nfRiskStratification-brightgreen?style=flat-square"/>
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square"/>
@@ -30,10 +30,11 @@ The package is aligned with the methodology described in:
 
 ## Installation
 
-Install the Python package from [PyPI](https://pypi.org/project/nf-risk-stratification/):
+Install the Python package from the GitHub source tree until the first PyPI
+release is published:
 
 ```bash
-python -m pip install nf-risk-stratification
+python -m pip install "git+https://github.com/saitejabandaru-in/nf-risk-stratification.git"
 ```
 
 Install the R development release from GitHub:
@@ -54,12 +55,11 @@ R CMD INSTALL nfRiskStratification_0.1.0.tar.gz
 
 | Resource | Link |
 | --- | --- |
-| PyPI project | https://pypi.org/project/nf-risk-stratification/ |
-| PyPI release files | https://pypi.org/project/nf-risk-stratification/#files |
 | GitHub repository | https://github.com/saitejabandaru-in/nf-risk-stratification |
-| GitHub releases | https://github.com/saitejabandaru-in/nf-risk-stratification/releases |
-| Latest GitHub release | https://github.com/saitejabandaru-in/nf-risk-stratification/releases/latest |
 | Issues | https://github.com/saitejabandaru-in/nf-risk-stratification/issues |
+
+PyPI and GitHub release pages will be linked here after the first public
+release is published.
 
 ## Required Data
 
@@ -157,12 +157,6 @@ source("ranking_analysis.R")
 
 ## Release Workflow
 
-GitHub releases are available at:
-
-```text
-https://github.com/saitejabandaru-in/nf-risk-stratification/releases
-```
-
 Tagged releases build and publish a source package automatically:
 
 ```bash
@@ -173,12 +167,15 @@ git push origin v0.1.0
 GitHub Actions then runs package checks, builds
 `nfRiskStratification_0.1.0.tar.gz`, and attaches it to the GitHub release.
 
-PyPI distributions are built from:
+PyPI distributions are prepared from:
 
 ```bash
 python -m build
 python -m twine check dist/*
 ```
+
+After the first upload succeeds, update this README with the public PyPI and
+GitHub release URLs.
 
 Never commit PyPI API tokens or credentials. Use environment variables or a
 trusted local keyring only at upload time.

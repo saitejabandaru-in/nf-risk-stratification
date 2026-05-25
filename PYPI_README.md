@@ -15,20 +15,21 @@ It mirrors the repository's R package workflow with:
 
 ## Install
 
+Install from GitHub until the first PyPI release is published:
+
 ```bash
-python -m pip install nf-risk-stratification
+python -m pip install "git+https://github.com/saitejabandaru-in/nf-risk-stratification.git"
 ```
 
 ## Links
 
 | Resource | Link |
 | --- | --- |
-| PyPI project | https://pypi.org/project/nf-risk-stratification/ |
-| PyPI release files | https://pypi.org/project/nf-risk-stratification/#files |
 | GitHub repository | https://github.com/saitejabandaru-in/nf-risk-stratification |
-| GitHub releases | https://github.com/saitejabandaru-in/nf-risk-stratification/releases |
-| Latest GitHub release | https://github.com/saitejabandaru-in/nf-risk-stratification/releases/latest |
 | Issues | https://github.com/saitejabandaru-in/nf-risk-stratification/issues |
+
+PyPI and GitHub release pages will be linked after the first public release is
+published.
 
 ## Quick Start
 
