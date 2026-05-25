@@ -29,7 +29,13 @@ The package is aligned with the methodology described in:
 
 ## Installation
 
-Install the development release from GitHub:
+Install the Python package from PyPI:
+
+```bash
+python -m pip install nf-risk-stratification
+```
+
+Install the R development release from GitHub:
 
 ```r
 install.packages("remotes", repos = "https://cloud.r-project.org")
@@ -78,6 +84,19 @@ example_path <- system.file(
 ```
 
 ## Quick Start
+
+Python:
+
+```python
+from nf_risk_stratification import read_nf_data, run_nf_pipeline
+
+data = read_nf_data("data/nf_clinical_data.csv")
+results = run_nf_pipeline(data)
+print(results["npc"]["global_p_values"])
+print(results["ranking"][:10])
+```
+
+R:
 
 ```r
 library(nfRiskStratification)

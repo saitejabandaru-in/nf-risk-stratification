@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nf-risk-stratification"
+version = "0.1.0"
+description = "Clinical risk stratification tools for necrotizing fasciitis using NPC-style p-value combinations and bootstrap inference."
+readme = "PYPI_README.md"
+requires-python = ">=3.9"
+license = "MIT"
+authors = [
+  { name = "Sai Teja Bandaru", email = "saitejabandaru.in@gmail.com" }
+]
+keywords = [
+  "necrotizing fasciitis",
+  "risk stratification",
+  "clinical analytics",
+  "bootstrap",
+  "nonparametric combination",
+  "biostatistics"
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Healthcare Industry",
+  "Intended Audience :: Science/Research",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Topic :: Scientific/Engineering :: Medical Science Apps.",
+  "Topic :: Scientific/Engineering :: Mathematics"
+]
+
+[project.urls]
+Homepage = "https://github.com/saitejabandaru-in/nf-risk-stratification"
+Repository = "https://github.com/saitejabandaru-in/nf-risk-stratification"
+Issues = "https://github.com/saitejabandaru-in/nf-risk-stratification/issues"
+
+[tool.setuptools.packages.find]
+where = ["python"]
+
+[tool.setuptools.package-data]
+nf_risk_stratification = ["py.typed", "data/*.csv"]
