@@ -1,0 +1,8 @@
+^\.github$
+^README\.Rmd$
+^results$
+^data$
+^scripts$
+^cran-comments\.md$
+^NEWS\.md$
+^LICENSE\.md$

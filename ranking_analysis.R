@@ -1,11 +1,13 @@
 # Global Severity Ranking of Patients using NPC
 
-library(dplyr)
-data <- read.csv("data/nf_clinical_data.csv")
+if (requireNamespace("nfRiskStratification", quietly = TRUE)) {
+  library(nfRiskStratification)
+} else {
+  source("R/nf-risk-stratification.R")
+}
 
-ranked <- data %>%
-  mutate(across(everything(), ~ rank(., ties.method = "average"), .names = "RANK_{.col}")) %>%
-  mutate(RANK_GLOBALE = rowSums(select(., starts_with("RANK_")))) %>%
-  arrange(RANK_GLOBALE)
+data <- read_nf_data("data/nf_clinical_data.csv")
+ranked <- rank_patients(data)
 
-cat("\nTop 10 Most Severe Patients:\n"); print(head(ranked, 10))
+cat("\nTop 10 most severe patients:\n")
+print(utils::head(ranked, 10))

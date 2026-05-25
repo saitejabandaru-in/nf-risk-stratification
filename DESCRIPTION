@@ -1,0 +1,21 @@
+Package: nfRiskStratification
+Title: Nonparametric Risk Stratification for Necrotizing Fasciitis
+Version: 0.1.0
+Authors@R: c(
+    person("Sai Teja", "Bandaru", role = c("aut", "cre"), email = "saitejabandaru.in@gmail.com")
+  )
+Description: Reproducible tools for necrotizing fasciitis clinical risk
+    stratification, including descriptive summaries, partial hypothesis tests,
+    nonparametric combination p-value methods, bootstrap confidence intervals,
+    and patient severity ranking.
+License: MIT + file LICENSE
+URL: https://github.com/saitejabandaru-in/nf-risk-stratification
+BugReports: https://github.com/saitejabandaru-in/nf-risk-stratification/issues
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Depends:
+    R (>= 3.6)
+Suggests:
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

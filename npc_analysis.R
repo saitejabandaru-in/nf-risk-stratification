@@ -1,18 +1,19 @@
 # NPC Statistical Tests and Bonferroni Correction
 
-data <- read.csv("data/nf_clinical_data.csv")
+if (requireNamespace("nfRiskStratification", quietly = TRUE)) {
+  library(nfRiskStratification)
+} else {
+  source("R/nf-risk-stratification.R")
+}
 
-p_values <- c(
-  HBA1C     = tryCatch(t.test(data$HBA1C, mu = 7)$p.value, error = function(e) NA),
-  ALBUMINA  = tryCatch(t.test(data$ALBUMINA, mu = 2.8)$p.value, error = function(e) NA)
-)
+data <- read_nf_data("data/nf_clinical_data.csv")
+results <- npc_analysis(data)
 
-combined_stat <- -2 * sum(log(p_values), na.rm = TRUE)
-df <- 2 * sum(!is.na(p_values))
-p_fisher <- 1 - pchisq(combined_stat, df)
+cat("\nPartial p-values:\n")
+print(results$partial_p_values)
 
-p_bonf <- p.adjust(p_values, method = "bonferroni")
+cat("\nGlobal NPC combination p-values:\n")
+print(results$global_p_values)
 
-cat("\nPartial p-values:\n"); print(p_values)
-cat("\nFisher Combined p-value:", round(p_fisher, 5), "\n")
-cat("\nBonferroni Corrected p-values:\n"); print(p_bonf)
+cat("\nBonferroni corrected p-values:\n")
+print(results$bonferroni_p_values)

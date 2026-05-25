@@ -1,17 +1,10 @@
 # Bootstrap Confidence Intervals for HBA1C and ALBUMINA
 
-library(boot)
-data <- read.csv("data/nf_clinical_data.csv")
+if (requireNamespace("nfRiskStratification", quietly = TRUE)) {
+  library(nfRiskStratification)
+} else {
+  source("R/nf-risk-stratification.R")
+}
 
-boot_func <- function(x, indices) mean(x[indices])
-
-boot_results <- list(
-  HBA1C = boot(data$HBA1C, statistic = boot_func, R = 1000),
-  ALBUMINA = boot(data$ALBUMINA, statistic = boot_func, R = 1000)
-)
-
-cat("\nBootstrap CI for HBA1C:\n")
-print(boot.ci(boot_results$HBA1C, type = "perc"))
-
-cat("\nBootstrap CI for ALBUMINA:\n")
-print(boot.ci(boot_results$ALBUMINA, type = "perc"))
+data <- read_nf_data("data/nf_clinical_data.csv")
+print(bootstrap_ci(data, reps = 1000))

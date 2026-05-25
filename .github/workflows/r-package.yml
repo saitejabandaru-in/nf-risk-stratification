@@ -1,4 +1,4 @@
-name: R
+name: R package
 
 on:
   push:
@@ -10,7 +10,7 @@ permissions:
   contents: read
 
 jobs:
-  build:
+  check:
     runs-on: macos-latest
     strategy:
       matrix:
@@ -26,8 +26,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          install.packages(c("remotes", "rcmdcheck"))
-          remotes::install_deps(dependencies = TRUE)
+          install.packages(c("remotes", "rcmdcheck"), repos = "https://cloud.r-project.org")
+          remotes::install_deps(dependencies = TRUE, repos = "https://cloud.r-project.org")
         shell: Rscript {0}
 
       - name: Check
