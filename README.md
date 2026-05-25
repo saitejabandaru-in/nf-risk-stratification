@@ -7,8 +7,8 @@
 </p>
 
 <p align="center">
-  <a href="https://pypi.org/project/nf-risk-stratification/"><img src="https://img.shields.io/pypi/v/nf-risk-stratification?style=flat-square&label=PyPI"/></a>
-  <a href="https://github.com/saitejabandaru-in/nf-risk-stratification/releases"><img src="https://img.shields.io/github/v/release/saitejabandaru-in/nf-risk-stratification?style=flat-square&label=GitHub%20Release"/></a>
+  <a href="https://pypi.org/project/nf-risk-stratification/"><img src="https://img.shields.io/badge/PyPI-ready%20for%20publish-blue?style=flat-square"/></a>
+  <a href="https://github.com/saitejabandaru-in/nf-risk-stratification/releases"><img src="https://img.shields.io/badge/GitHub%20Release-ready%20for%20v0.1.0-blue?style=flat-square"/></a>
   <img src="https://img.shields.io/badge/Language-Python%20%7C%20R-blue?style=flat-square"/>
   <img src="https://img.shields.io/badge/Package-nfRiskStratification-brightgreen?style=flat-square"/>
   <img src="https://img.shields.io/badge/License-MIT-green?style=flat-square"/>
