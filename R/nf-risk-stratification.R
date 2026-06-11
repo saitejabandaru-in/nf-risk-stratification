@@ -212,14 +212,14 @@ rank_patients <- function(
       stop("Ranking direction for `", variable, "` must be 'asc' or 'desc'.", call. = FALSE)
     }
     rank_input <- if (identical(direction, "asc")) -values else values
-    stats::rank(rank_input, ties.method = "average", na.last = "keep")
+    base::rank(rank_input, ties.method = "average", na.last = "keep")
   })
 
   score_matrix <- do.call(cbind, score_parts)
   colnames(score_matrix) <- paste0("RANK_", variables)
   rank_frame <- cbind(rank_frame, as.data.frame(score_matrix))
   rank_frame$SEVERITY_SCORE <- rowSums(score_matrix, na.rm = TRUE)
-  rank_frame$SEVERITY_RANK <- stats::rank(-rank_frame$SEVERITY_SCORE, ties.method = "first")
+  rank_frame$SEVERITY_RANK <- base::rank(-rank_frame$SEVERITY_SCORE, ties.method = "first")
 
   ordered <- rank_frame[order(rank_frame$SEVERITY_RANK), , drop = FALSE]
   rownames(ordered) <- NULL
