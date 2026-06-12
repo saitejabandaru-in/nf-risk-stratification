@@ -2,7 +2,7 @@
 \alias{bootstrap_ci}
 \title{Bootstrap mean confidence intervals}
 \usage{
-bootstrap_ci(data, variables = c("HBA1C", "ALBUMINA"), reps = 1000,
+bootstrap_ci(data, variables = .required_nf_columns, reps = 1000,
   conf = 0.95, seed = 2026)
 }
 \arguments{

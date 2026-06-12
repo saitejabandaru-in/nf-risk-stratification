@@ -1,7 +1,7 @@
 \name{validate_nf_data}
 \alias{validate_nf_data}
 \title{Validate a necrotizing fasciitis clinical dataset}
-\usage{validate_nf_data(data, required = c("HBA1C", "ALBUMINA"))}
+\usage{validate_nf_data(data, required = .required_nf_columns)}
 \arguments{
 \item{data}{A data frame with at least \code{HBA1C} and \code{ALBUMINA}.}
 \item{required}{Character vector of required column names.}

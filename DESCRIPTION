@@ -13,9 +13,9 @@ URL: https://github.com/saitejabandaru-in/nf-risk-stratification
 BugReports: https://github.com/saitejabandaru-in/nf-risk-stratification/issues
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.2
 Depends:
     R (>= 3.6)
 Suggests:
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+Config/roxygen2/version: 8.0.0

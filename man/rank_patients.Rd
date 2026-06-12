@@ -2,10 +2,10 @@
 \alias{rank_patients}
 \title{Rank patients by clinical severity}
 \usage{
-rank_patients(data, variables = intersect(names(c(HBA1C = "desc",
-  ALBUMINA = "asc", MORTO = "desc", AMPUTAZIONE = "desc")), names(data)),
-  directions = c(HBA1C = "desc", ALBUMINA = "asc", MORTO = "desc",
-  AMPUTAZIONE = "desc"), id_col = "PATIENT_ID")
+rank_patients(data, variables =
+  intersect(names(.default_rank_directions),
+  names(data)), directions = .default_rank_directions,
+  id_col = "PATIENT_ID")
 }
 \arguments{
 \item{data}{A validated or raw clinical data frame.}
